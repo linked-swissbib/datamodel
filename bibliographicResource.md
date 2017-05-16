@@ -9,7 +9,7 @@ http://data.swissbib.ch/bibliographicResource/[ID]
 
 ## RDF class
 | class | use |
-| - | - |
+| --- | --- |
 | [dct:BibliographicResource](http://purl.org/dc/terms/BibliographicResource) | for all resources |
 | [bibo:Article](http://purl.org/ontology/bibo/Article) | for journal articles |
 | [bibo:Book](http://purl.org/ontology/bibo/Book) | for monographes |
@@ -22,7 +22,7 @@ http://data.swissbib.ch/bibliographicResource/[ID]
 
 ## Properties
 | property | use* | datatype | content |
-| - | - | - | - |
+| --- | --- | --- | --- |
 | [bf:instanceOf](http://bibframe.org/vocab/instanceOf) | where possible | URI | Work(s) of which the resource is an instance (Swissbib URI from entity [*work*](http://data.swissbib.ch/work) ) |
 | [bibo:edition](http://purl.org/ontology/bibo/edition) | where possible | string | Edition statement and responsibility statement |
 | [bibo:isbn10](http://purl.org/ontology/bibo/isbn10) | where possible | string | ISBN in 13 digits |
