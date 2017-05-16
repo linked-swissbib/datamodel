@@ -1,7 +1,7 @@
 # Entity *work*
 
 Definition: an abstract entity, gathering all bibliographic records with similar characteristics (ex.: same title, same authors, ...). 
-At the moment this entity does not match the definitions of the [FRBR work] (https://archive.ifla.org/VII/s13/frbr/frbr_current_toc.htm) or [BIBFRAME work] (https://www.loc.gov/bibframe/docs/bibframe2-model.html).
+At the moment this entity does not match the definitions of the [FRBR work](https://archive.ifla.org/VII/s13/frbr/frbr_current_toc.htm) or [BIBFRAME work](https://www.loc.gov/bibframe/docs/bibframe2-model.html).
 
 ## URI schema
 ```sh
