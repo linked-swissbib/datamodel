@@ -8,6 +8,7 @@ http://data.swissbib.ch/bibliographicResource/[ID]
 ```
 
 ## RDF class
+
 | class | use |
 | --- | --- |
 | [dct:BibliographicResource](http://purl.org/dc/terms/BibliographicResource) | for all resources |
@@ -21,6 +22,7 @@ http://data.swissbib.ch/bibliographicResource/[ID]
 | [bibo:Website](http://purl.org/ontology/bibo/Website) | for websites |
 
 ## Properties
+
 | property | use* | datatype | content |
 | --- | --- | --- | --- |
 | [bf:instanceOf](http://bibframe.org/vocab/instanceOf) | where possible | URI | Work(s) of which the resource is an instance (Swissbib URI from entity [*work*](http://data.swissbib.ch/work) ) |
