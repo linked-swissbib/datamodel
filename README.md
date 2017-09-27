@@ -2,9 +2,9 @@
 
 Bibliographic records are converted to an RDF based data model and divided into six bibliographic concepts:
 
-- [bibliographicResource](./bibliographicResource)
-- [document](./document)
-- [item](./item)
-- [work](./work)
-- [person](./person)
-- [organisation](./organisation)
+- [bibliographicResource](./bibliographicResource.md)
+- [document](./document.md)
+- [item](./item.md)
+- [work](./work.md)
+- [person](./person.md)
+- [organisation](./organisation.md)
