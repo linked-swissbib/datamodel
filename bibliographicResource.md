@@ -33,6 +33,7 @@ http://data.swissbib.ch/bibliographicResource/[ID]
 | [dbp:originalLanguage](http://dbpedia.org/ontology/originalLanguage) | where possible | URI | Original anguage of the resource (Lexvo URI) |
 | [dc:format](http://purl.org/dc/elements/1.1/format) | where possible | string | Physical description (extent, other physical details, dimensions, accompanying material) |
 | [dct:bibliographicCitation](http://purl.org/dc/terms/bibliographicCitation) | where possible | string | Series statement or note about host item |
+| [dct:alternative](http://purl.org/dc/terms/alternative) | where possible | string | Alternative title (incl. number and name of part)|
 | [dct:contributor](http://purl.org/dc/terms/contributor) | where possible | URI | Main or secondary author(s) (Swissbib URI from entity [*person*](http://data.swissbib.ch/person) or [*organisation*](http://data.swissbib.ch/organisation)) |
 | [dct:hasPart](http://purl.org/dc/terms/hasPart) | where possible | string | Parts of the resource (i.e. titles, ev. statements of responsibility and numbering) |
 | [dct:isPartOf](http://purl.org/dc/terms/isPartOf) | where possible | URI | Host item, mainly used for journal articles (Swissbib URI from entity [*bibliographicResource*](http://data.swissbib.ch/bibliographicResource)) |
