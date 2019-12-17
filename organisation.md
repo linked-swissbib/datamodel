@@ -113,6 +113,5 @@ http://data.swissbib.ch/organisation/[ID]
 | [wdt:P791](https://www.wikidata.org/wiki/Property:P791) | where possible | URI + labels | International Standard Identifier for Libraries (ISIL)  | Wikidata [wdt:P791](https://www.wikidata.org/wiki/Property:wdt:P791) |
 | [wdt:P968](https://www.wikidata.org/wiki/Property:P968) | where possible | URI + labels | email address | Wikidata [wdt:P968](https://www.wikidata.org/wiki/Property:wdt:P968) |
 | [wdt:P973](https://www.wikidata.org/wiki/Property:P973) | where possible | URI + labels | described at URL / event | Wikidata [wdt:P973](https://www.wikidata.org/wiki/Property:wdt:P973) |
- |
- |
+
 \* The use in every resource doesn't exclude some exceptions. It means that every resource should contain this data.

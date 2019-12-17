@@ -114,6 +114,5 @@ http://data.swissbib.ch/person/[ID]
 | [wdt:P451](https://www.wikidata.org/wiki/Property:P451) | where possible | URI + labels | partner | Wikidata [wdt:P451](https://www.wikidata.org/wiki/Property:P451) |
 | [wdt:P509](https://www.wikidata.org/wiki/Property:P509) | where possible | URI + labels | cause of death | Wikidata [wdt:P509](https://www.wikidata.org/wiki/Property:P509) |
 | [wdt:P69](https://www.wikidata.org/wiki/Property:P69) | where possible | URI + labels | educated at | Wikidata [wdt:P69](https://www.wikidata.org/wiki/Property:P69) |
-  |
-  |
-\* The use in every resource doesn't exclude some exceptions. It means that every resource should contain this data.  |
+
+\* The use in every resource doesn't exclude some exceptions. It means that every resource should contain this data.
