@@ -21,6 +21,6 @@ http://data.swissbib.ch/item/[ID]
 | [bf:subLocation](http://bibframe.org/vocab/subLocation) | where possible | string | Sublocation within the library |
 | [bibo:locator](http://purl.org/ontology/bibo/locator) | where possible | string | Shelfmark |
 | [bibo:owner](http://purl.org/ontology/bibo/owner) | everywhere | URI | Library owning the item (Swissbib URI from entity [*organisation*](http://data.swissbib.ch/organisation)) |
-| [foaf:page](http://xmlns.com/foaf/0.1/page) | everywhere | URI | Link to the item in the local library interface |
+| [foaf:page](http://xmlns.com/foaf/spec/#term_page) | everywhere | URI | Link to the item in the local library interface |
 
 \* The use in every resource doesn't exclude some exceptions. It means that every resource should contain this data.

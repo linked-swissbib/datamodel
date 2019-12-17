@@ -22,6 +22,6 @@ http://data.swissbib.ch/document/[ID]
 | [dct:issued](http://purl.org/dc/terms/issued) | everywhere | dateTime | Date of publication of the bibliographic resource |
 | [dct:modified](http://purl.org/dc/terms/modified) | everywhere | dateTime | Date of last modification of the bibliographic resource |
 | [dct:rights](http://purl.org/dc/terms/rights) | where possible | string | Mark "Metadata rights reserved" (should not be visible in the API) |
-| [foaf:primaryTopic](http://xmlns.com/foaf/0.1/primaryTopic) | everywhere | URI | Link to the bibliographic resource described (Swissbib URI from entity [*bibliographicResource*](http://data.swissbib.ch/bibliographicResource)) |
+| [foaf:primaryTopic](http://xmlns.com/foaf/spec/#term_primaryTopic) | everywhere | URI | Link to the bibliographic resource described (Swissbib URI from entity [*bibliographicResource*](http://data.swissbib.ch/bibliographicResource)) |
 
 \* The use in every resource doesn't exclude some exceptions. It means that every resource should contain this data.

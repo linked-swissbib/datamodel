@@ -30,7 +30,7 @@ http://data.swissbib.ch/bibliographicResource/[ID]
 | [bibo:isbn10](http://purl.org/ontology/bibo/isbn10) | where possible | string | ISBN in 13 digits |
 | [bibo:isbn13](http://purl.org/ontology/bibo/isbn13) | where possible | string | ISBN in 10 characters |
 | [bibo:issn](http://purl.org/ontology/bibo/issn) | where possible | string | ISSN |
-| [dbp:originalLanguage](http://dbpedia.org/ontology/originalLanguage) | where possible | URI | Original anguage of the resource (Lexvo URI) |
+| [dbo:originalLanguage](http://dbpedia.org/ontology/originalLanguage) | where possible | URI | Original anguage of the resource (Lexvo URI) |
 | [dc:format](http://purl.org/dc/elements/1.1/format) | where possible | string | Physical description (extent, other physical details, dimensions, accompanying material) |
 | [dct:alternative](http://purl.org/dc/terms/alternative) | where possible | string | Alternative title (incl. number and name of part)|
 | [dct:bibliographicCitation](http://purl.org/dc/terms/bibliographicCitation) | where possible | string | Series statement or note about host item |

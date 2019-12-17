@@ -11,55 +11,109 @@ http://data.swissbib.ch/person/[ID]
 
 | class | use |
 | --- | --- |
-| [foaf:Person](http://xmlns.com/foaf/0.1/Person) | for all resources |
+| [foaf:Person](http://xmlns.com/foaf/spec/#term_Person) | for all resources |
 
 ## Properties
 
-| property | use* | datatype | content |
-| --- | --- | --- | --- |
-| [dbp:birthYear](http://dbpedia.org/ontology/birthYear) | where possible | gYear | Birth year |
-| [dbp:deathYear](http://dbpedia.org/ontology/deathYear) | where possible | gYear | Death year |
-| [foaf:firstName](http://xmlns.com/foaf/0.1/firstName) | where possible | string | First name |
-| [foaf:lastName](http://xmlns.com/foaf/0.1/lastName) | where possible | string | Last name |
-| [foaf:name](http://xmlns.com/foaf/0.1/name) | where possible | string | Name (only if the person has no distinct first and last names) |
-| [rdfs:label](http://www.w3.org/2000/01/rdf-schema#label) | everywhere | string | Full heading of the person, including name and - if available - numeration, years of birth/death and title |
-| [skos:note](http://www.w3.org/2004/02/skos/core#note ) | where possible | string | Titles and words associated with the name of the person |
-| [owl:sameAs](http://www.w3.org/2002/07/owl#sameAs) | where possible | URI | Interconnection between swissbib and DBpedia/VIAF|
-| *Properties imported from DBpedia and VIAF >>* ||||
-| [dbp:abstract](http://dbpedia.org/ontology/abstract) | where possible | RDF resource (blank node) | Introducing text about the person (one blank node for each language: de, en, fr, it) |
-| [dbp:birthDate](http://dbpedia.org/ontology/birthDate) | where possible | date | Birth date |
-| [dbp:birthPlace](http://dbpedia.org/ontology/birthPlace) | where possible | URI | Birth place - county and/or city (URI from DBpedia) |
-| [dbp:deathDate](http://dbpedia.org/ontology/deathDate) | where possible | date | Death date |
-| [dbp:deathPlace](http://dbpedia.org/ontology/deathPlace) | where possible | URI | Death place - county and/or city (URI from DBpedia) |
-| [dbp:genre](http://dbpedia.org/ontology/genre) | where possible | URI | Genre (ex: thriller, pop music, poetry, ...) associated with the person (URI from DBpedia) |
-| [dbp:influenced](http://dbpedia.org/ontology/influenced) | where possible | URI | Persons or works which were influenced by this person (URI from DBpedia) |
-| [dbp:influencedBy](http://dbpedia.org/ontology/influencedBy) | where possible | URI | Other person having influenced this person (URI from DBpedia) |
-| [dbp:movement](http://dbpedia.org/ontology/movement) | where possible | URI | artistic movement or school with which the person is associated (URI from DBpedia) |
-| [dbp:nationality](http://dbpedia.org/ontology/nationality) | where possible | URI | Nationality (URI from DBpedia) |
-| [dbp:notableWork](http://dbpedia.org/ontology/notableWork) | where possible | URI | Notable works of the person (URI from DBpedia) |
-| [dbp:occupation](http://dbpedia.org/ontology/occupation) | where possible | URI | Occupation, activity of the person (URI from DBpedia) |
-| [dbp:partner](http://dbpedia.org/ontology/partner) | where possible | URI | Partner (URI from DBpedia) |
-| [dbp:pseudonym](http://dbpedia.org/ontology/pseudonym) | where possible | URI | Pseudonym |
-| [dbp:spouse](http://dbpedia.org/ontology/spouse) | where possible | URI | Spouse (URI from DBpedia) |
-| [dbp:thumbnail](http://dbpedia.org/ontology/thumbnail) | where possible | URI | Thumbnail (URI from DBpedia) |
-| [schema:alternateName](http://schema.org/givenName) | where possible | string | Alias |
-| [schema:birthDate](http://schema.org/birthDate) | where possible | string | Birth date |
-| [schema:deathDate](http://schema.org/deathDate) | where possible | string | Death date |
-| [schema:familyName](http://schema.org/familyName) | where possible | string | Last name / Family name |
-| [schema:gender](http://schema.org/gender) | where possible | string | Gender |
-| [schema:givenName](http://schema.org/givenName) | where possible | string | First name / Given name |
-| [schema:sameAs](http://schema.org/sameAs) | where possible | URI | URL of a reference web page |
-| *Properties imported from DBpedia as literals, content in German, French, Italian and English >>* ||||
-| lsb:dbpBirthPlaceAsLiteral | where possible | string | Birth place - county and/or city |
-| lsb:dbpDeathPlaceAsLiteral | where possible | string | Death place - county and/or city |
-| lsb:dbpGenreAsLiteral | where possible | string | Genre (ex: thriller, pop music, poetry, ...) associated with the person |
-| lsb:dbpInfluencedAsLiteral | where possible | string | Persons or works which were influenced by this person |
-| lsb:dbpInfluencedByAsLiteral | where possible | string | Other person having influenced this person |
-| lsb:dbpMovementAsLiteral | where possible | string | artistic movement or school with which the person is associated |
-| lsb:dbpNationalityAsLiteral | where possible | string | Nationality |
-| lsb:dbpNotableWorkAsLiteral | where possible | string | Notable works of the person |
-| lsb:dbpOccupationAsLiteral | where possible | string | Occupation, activity of the person |
-| lsb:dbpPartnerAsLiteral | where possible | string | Partner |
-| lsb:dbpSpouseAsLiteral | where possible | string | Spouse |
-
-\* The use in every resource doesn't exclude some exceptions. It means that every resource should contain this data.
+| property | use* | datatype | content | source |
+| --- | --- | --- | --- | --- |
+| [dbo:abstract](http://dbpedia.org/ontology/abstract) | where possible | string (de, en, fr, it) | Introducing text about the person | DBpedia [dbo:abstract](http://dbpedia.org/ontology/abstract) |
+| [dbo:birthDate](http://dbpedia.org/ontology/birthDate) | where possible | date | Birth date | Wikidata [wdt:P569](https://www.wikidata.org/wiki/Property:P569), GND [dateOfBirth](https://d-nb.info/standards/elementset/gnd#dateOfBirth), VIAF [schema:birthDate](http://schema.org/birthDate), DBpedia [dbo:birthDate](http://dbpedia.org/ontology/birthDate) |
+| [dbo:birthPlace](http://dbpedia.org/ontology/birthPlace) | where possible | URI + labels | Birth place - county and/or city (URI from DBpedia) | GND [placeOfBirth](https://d-nb.info/standards/elementset/gnd#placeOfBirth), Wikidata [wdt:P19] (https://www.wikidata.org/wiki/Property:P19), DBpedia [dbo:birthPlace](http://dbpedia.org/ontology/birthPlace) |
+| [dbo:birthYear](http://dbpedia.org/ontology/birthYear) | where possible | year | Birth year | Wikidata, GND [dbo:birthYear](https://d-nb.info/standards/elementset/gnd#birthYear), VIAF, swissbib, DBpedia [dbo:birthYear](http://dbpedia.org/ontology/birthYear) |
+| [dbo:child](http://dbpedia.org/ontology/child) | where possible |URI + labels| child | GND [hasChild](https://d-nb.info/standards/elementset/gnd#hasChild), Wikidata [wdt:P40] (https://www.wikidata.org/wiki/Property:P40), DBpedia [dbo:child](http://dbpedia.org/ontology/child) |
+| [dbo:deathDate](http://dbpedia.org/ontology/deathDate) | where possible | date | Death date | Wikidata [wdt:P570](https://www.wikidata.org/wiki/Property:P570), GND [dateOfDeath](https://d-nb.info/standards/elementset/gnd#dateOfDeath), VIAF [schema:deathDate](http://schema.org/deathDate), DBpedia [dbo:deathDate](http://dbpedia.org/ontology/deathDate) |
+| [dbo:deathPlace](http://dbpedia.org/ontology/deathPlace) | where possible | URI + labels | Death place - county and/or city (URI from DBpedia) | GND [placeOfDeath](https://d-nb.info/standards/elementset/gnd#placeOfDeath), Wikidata [wdt:P20] (https://www.wikidata.org/wiki/Property:P20), DBpedia [dbo:deathPlace](http://dbpedia.org/ontology/deathPlace) |
+| [dbo:deathYear](http://dbpedia.org/ontology/deathYear) | where possible | year | Death year | Wikidata, GND [dbo:deathYear](https://d-nb.info/standards/elementset/gnd#deathYear), VIAF, swissbib, DBpedia [dbo:deathYear](http://dbpedia.org/ontology/deathYear) |
+| [dbo:genre](http://dbpedia.org/ontology/genre) | where possible | URI + labels | Genre (ex: thriller, pop music, poetry, ...) associated with the person (URI from DBpedia) | Wikidata [wdt:P136](https://www.wikidata.org/wiki/Property:P136) |
+| [dbo:influencedBy](http://dbpedia.org/ontology/influencedBy) | where possible | URI +labels | Other person having influenced this person (URI from DBpedia) | Wikidata [wdt:P737](https://www.wikidata.org/wiki/Property:P737), DBpedia [dbo:influencedBy](http://dbpedia.org/ontology/influencedBy) |
+| [dbo:movement](http://dbpedia.org/ontology/movement) | where possible | URI + labels | artistic movement or school with which the person is associated (URI from DBpedia) | Wikidata [wdt:P135](https://www.wikidata.org/wiki/Property:P135), DBpedia [dbo:movement](http://dbpedia.org/ontology/movement) |
+| [dbo:nationality](http://dbpedia.org/ontology/nationality) | where possible | URI + labels | Nationality (URI from DBpedia) | Wikidata [wdt:P27](https://www.wikidata.org/wiki/Property:P27), DBpedia [dbo:nationality](http://dbpedia.org/ontology/nationality) |
+| [dbo:notableWork](http://dbpedia.org/ontology/notableWork) | where possible | URI + labels | Notable works of the person (URI from DBpedia) | Wikidata [wdt:P800](https://www.wikidata.org/wiki/Property:P800), VIAF [dbo:notableWork](http://dbpedia.org/ontology/notableWork), DBpedia [dbo:notableWork](http://dbpedia.org/ontology/notableWork) |
+| [dbo:occupation](http://dbpedia.org/ontology/occupation), GND [professionOrOccupation](https://d-nb.info/standards/elementset/gnd#professionOrOccupation) | where possible | URI + labels | Occupation, activity of the person (URI from DBpedia) | Wikidata [wdt:P106](https://www.wikidata.org/wiki/Property:P106), DBpedia [dbo:occupation](http://dbpedia.org/ontology/occupation) |
+| [dbo:parent](http://dbpedia.org/ontology/parent) | where possible |URI + labels| Father and mother| GND [hasParent](https://d-nb.info/standards/elementset/agrelon#hasParent), Wikidata [wdt:P22](https://www.wikidata.org/wiki/Property:P22), DBpedia [dbo:parent](http://dbpedia.org/ontology/parent) |
+| [dbo:pseudonym](http://dbpedia.org/ontology/pseudonym) | where possible | string | Pseudonym | GND [pseudonym](https://d-nb.info/standards/elementset/gnd#pseudonym), Wikidata [wdt:P742](https://www.wikidata.org/wiki/Property:P742), DBpedia [dbo:pseudonym](http://dbpedia.org/ontology/pseudonym) |
+| [dbo:sibling](http://dbpedia.org/ontology/sibling) | where possible |URI + labels| Siblings | GND [hasSibling](https://d-nb.info/standards/elementset/agrelon#hasSibling), Wikidata [wdt:P3373](https://www.wikidata.org/wiki/Property:P3373), DBpedia [dbo:sibling](http://dbpedia.org/ontology/sibling) |
+| [dbo:spouse](http://dbpedia.org/ontology/spouse) | where possible | URI + labels | Spouse (URI from DBpedia) | GND [hasSpouse](https://d-nb.info/standards/elementset/agrelon#hasSpouse), Wikidata [wdt:P26](https://www.wikidata.org/wiki/Property:P26), DBpedia [dbo:spouse](http://dbpedia.org/ontology/spouse) |
+| [dbo:thumbnail](http://dbpedia.org/ontology/thumbnail) | where possible | URI | Thumbnail (URI from DBpedia) | GND [depiction](https://d-nb.info/standards/elementset/gnd#depiction), Wikidata [wdt:P18](https://www.wikidata.org/wiki/Property:P18), DBpedia [dbo:thumbnail](http://dbpedia.org/ontology/thumbnail) |
+| [dbo:website](http://dbpedia.org/ontology/website) | where possible | URI | Links to websites | GND [homepage](https://d-nb.info/standards/elementset/gnd#homepage), DBpedia [dbo:website](http://dbpedia.org/ontology/website) |
+| [foaf:firstName](http://xmlns.com/foaf/spec/#term_firstName) | where possible | string | First name | swissbib |
+| [foaf:isPrimaryTopicOf](http://xmlns.com/foaf/spec/#term_isPrimaryTopicOf) | where possible | URI | Links to Wikipedia| GND [wikipedia](https://d-nb.info/standards/elementset/gnd#wikipedia) and DBpedia [foaf:isPrimaryTopicOf](http://xmlns.com/foaf/spec/#term_isPrimaryTopicOf) |
+| [foaf:lastName](http://xmlns.com/foaf/spec/#term_lastName) | where possible | string | Last name | swissbib |
+| [foaf:name](http://xmlns.com/foaf/spec/#term_name) | where possible | string | Name (only if the person has no distinct first and last names) | swissbib |
+| [gnd:academicDegree](https://d-nb.info/standards/elementset/gnd#academicDegree) | where possible | string | An academic degree| GND [academicDegree](https://d-nb.info/standards/elementset/gnd#academicDegree) |
+| [gnd:acquaintanceshipOrFriendship](https://d-nb.info/standards/elementset/gnd#acquaintanceshipOrFriendship) | where possible |URI + labels| Relationship between a person, family, or corporate body and another person, family, or corporate body which cannot be specified more closely | GND [acquaintanceshipOrFriendship](https://d-nb.info/standards/elementset/gnd#acquaintanceOrFriendship) |
+| [gnd:affiliation](https://d-nb.info/standards/elementset/gnd#affiliation) | where possible | URI + labels | A corporate body associated with a person or group of persons. | GND [affiliation](https://d-nb.info/standards/elementset/gnd#affiliation) |
+| [gnd:affiliationAsLiteral](https://d-nb.info/standards/elementset/gnd#affiliationAsLiteral) | where possible | string | A corporate body associated with a person or group of persons. This property is equivalent to gndo:affiliation but gives a literal instead of a URI. | GND [affiliationAsLiteral](https://d-nb.info/standards/elementset/gnd#affiliationAsLiteral) |
+| [gnd:biographicalOrHistoricalInformation](https://d-nb.info/standards/elementset/gnd#biographicalOrHistoricalInformation) | where possible | string | Summary of the essential biographical, historical, or other information about the described entity. | GND [biographicalOrHistoricalInformation](https://d-nb.info/standards/elementset/gnd#biographicalOrHistoricalInformation) |
+| [gnd:broaderTermGeneral](	https://d-nb.info/standards/elementset/gnd#broaderTermGeneral) | where possible |URI + labels| The generic relation is a semantic relation between two concepts where the intension of one of the concepts includes that of the other concepts and at least one additional delimiting characteristic is added. | GND [broaderTermGeneral](https://d-nb.info/standards/elementset/gnd#broaderTermGeneral) |
+| [gnd:broaderTermInstantial](	https://d-nb.info/standards/elementset/gnd#broaderTermInstantial) | where possible |URI + labels| 	The instance relationship links a general concept such as a class of things or events, and an individual instance oft hat class, which is often represented by a proper name. | GND [broaderTermInstantial](https://d-nb.info/standards/elementset/gnd#broaderTermInstantial) |
+| [gnd:characteristicPlace](	https://d-nb.info/standards/elementset/gnd#characteristicPlace) | where possible |URI + labels|	A significant place for a person or family | GND [characteristicPlace](https://d-nb.info/standards/elementset/gnd#characteristicPlace) |
+| [gnd:correspondent](	https://d-nb.info/standards/elementset/gnd#correspondent) | where possible |URI + labels| 	A person or organization who was either the writer or recipient of a letter or other communication | GND [correspondent](https://d-nb.info/standards/elementset/gnd#correspondent) |
+| [gnd:dateOfBirthAndDeath](https://d-nb.info/standards/elementset/gnd#dateOfBirthAndDeath) | where possible | string | 	Date of birth and death | GND [dateOfBirthAndDeath](https://d-nb.info/standards/elementset/gnd#dateOfBirthAndDeath) |
+| [gnd:fieldOfStudy](https://d-nb.info/standards/elementset/gnd#fieldOfStudy) | where possible |URI + labels| 	A person’s field of study | GND [fieldOfStudy](https://d-nb.info/standards/elementset/gnd#fieldOfStudy) |
+| [gnd:functionOrRole](https://d-nb.info/standards/elementset/gnd#functionOrRole) | where possible |URI + labels| 	Function or role| GND [functionOrRole](https://d-nb.info/standards/elementset/gnd#functionOrRole) |
+| [gnd:geographicAreaCode](	https://d-nb.info/standards/elementset/gnd#geographicAreaCode) | where possible |URI + labels| Geographic area code | GND [geographicAreaCode](https://d-nb.info/standards/elementset/gnd#geographicAreaCode) |
+| [gnd:gndIdentifier](https://d-nb.info/standards/elementset/gnd#gndIdentifier) | where possible | string | GND identifier | GND [gndIdentifier](https://d-nb.info/standards/elementset/gnd#gndIdentifier) |
+| [gnd:gndSubjectCategory](	https://d-nb.info/standards/elementset/gnd#gndSubjectCategory) | where possible |URI + labels| GND subject category | GND [gndSubjectCategory](https://d-nb.info/standards/elementset/gnd#gndSubjectCategory) |
+| [gnd:hasAuntUncle](	https://d-nb.info/standards/elementset/agrelon#hasAuntUncle) | where possible |URI + labels| | GND [hasAuntUncle](https://d-nb.info/standards/elementset/agrelon#hasAuntUncle) |
+| [gnd:hasColleague](https://d-nb.info/standards/elementset/agrelon#hasColleague) | where possible |URI + labels| | GND [hasColleague](https://d-nb.info/standards/elementset/agrelon#hasColleague) |
+| [gnd:hasFriend](	https://d-nb.info/standards/elementset/agrelon#hasFriend) | where possible |URI + labels| | GND [hasFriend](https://d-nb.info/standards/elementset/agrelon#hasFriend) |
+| [gnd:hasGrandChild](	https://d-nb.info/standards/elementset/agrelon#hasGrandChild) | where possible |URI + labels| | GND [hasGrandChild](https://d-nb.info/standards/elementset/agrelon#hasGrandChild) |
+| [gnd:hasGrandParent](https://d-nb.info/standards/elementset/agrelon#hasGrandParent) | where possible |URI + labels| | GND [hasGrandParent](https://d-nb.info/standards/elementset/agrelon#hasGrandParent) |
+| [gnd:hasNieceNephew](https://d-nb.info/standards/elementset/agrelon#hasNieceNephew) | where possible |URI + labels| | GND [hasNieceNephew](https://d-nb.info/standards/elementset/agrelon#hasNieceNephew) |
+| [gnd:hasStudent](https://d-nb.info/standards/elementset/agrelon#hasStudent) | where possible |URI + labels| | GND [hasStudent](https://d-nb.info/standards/elementset/agrelon#hasStudent) |
+| [gnd:hasTeacher](https://d-nb.info/standards/elementset/agrelon#hasTeacher) | where possible |URI + labels| | GND [hasTeacher](https://d-nb.info/standards/elementset/agrelon#hasTeacher) |
+| [gnd:languageCode](	https://d-nb.info/standards/elementset/gnd#languageCode) | where possible |URI + labels| Language code | GND [languageCode](https://d-nb.info/standards/elementset/gnd#languageCode) |
+| [gnd:memberOfTheFamily](https://d-nb.info/standards/elementset/gnd#memberOfTheFamily) | where possible |URI + labels| 	Member of the family | GND [memberOfTheFamily](https://d-nb.info/standards/elementset/gnd#memberOfTheFamily) |
+| [gnd:oldAuthorityNumber](	https://d-nb.info/standards/elementset/gnd#oldAuthorityNumber) | where possible | string | Old authority number | GND [oldAuthorityNumber](https://d-nb.info/standards/elementset/gnd#oldAuthorityNumber) |
+| [gnd:periodOfActivity](https://d-nb.info/standards/elementset/gnd#periodOfActivity) | where possible | string | A person's known period of activity | GND [periodOfActivity](https://d-nb.info/standards/elementset/gnd#periodOfActivity) |
+| [gnd:placeOfActivity](https://d-nb.info/standards/elementset/gnd#placeOfActivity) | where possible |URI + labels| A person's known place of activity| GND [placeOfActivity](https://d-nb.info/standards/elementset/gnd#placeOfActivity), Wikidata [wdt:P937](https://www.wikidata.org/wiki/Property:P937) |
+| [gnd:placeOfBirthAsLiteral](https://d-nb.info/standards/elementset/gnd#placeOfBirthAsLiteral) | where possible | string | Place of birth | GND [placeOfBirthAsLiteral](https://d-nb.info/standards/elementset/gnd#placeOfBirthAsLiteral) |
+| [gnd:placeOfDeathAsLiteral](https://d-nb.info/standards/elementset/gnd#placeOfDeathAsLiteral) | where possible | string | Place of death | GND [placeOfDeathAsLiteral](https://d-nb.info/standards/elementset/gnd#placeOfDeathAsLiteral) |
+| [gnd:placeOfExile](https://d-nb.info/standards/elementset/gnd#placeOfExile) | where possible |URI + labels| 	A place where a person or family lived in exile | GND [placeOfExile](https://d-nb.info/standards/elementset/gnd#placeOfExile) |
+| [gnd:playedInstrument](https://d-nb.info/standards/elementset/gnd#playedInstrument) | where possible |URI + labels| | GND [playedInstrument](https://d-nb.info/standards/elementset/gnd#playedInstrument) |
+| [gnd:professionalRelationship](https://d-nb.info/standards/elementset/gnd#professionalRelationship) | where possible |URI + labels| An occupational relationship between a person or family and another person or family | GND [professionalRelationship](https://d-nb.info/standards/elementset/gnd#professionalRelationship) |
+| [gnd:professionOrOccupationAsLiteral](https://d-nb.info/standards/elementset/gnd#professionOrOccupationAsLiteral) | where possible | string | A profession or occupation practiced by a person | GND [professionOrOccupationAsLiteral](https://d-nb.info/standards/elementset/gnd#professionOrOccupationAsLiteral) |
+| [gnd:publication](https://d-nb.info/standards/elementset/gnd#publication) | where possible | string | notable works as literals| GND [publication](https://d-nb.info/standards/elementset/gnd#publication) |
+| [gnd:realIdentity](https://d-nb.info/standards/elementset/gnd#realIdentity) | where possible |URI + labels| 	Links an identity under which one or more persons act, e. g. write, compose or create art, but that is not their real name (i. e. a pseudonym) to their real identity. | GND [realIdentity](https://d-nb.info/standards/elementset/gnd#realIdentity) |
+| [gnd:relatedCorporateBody](https://d-nb.info/standards/elementset/gnd#relatedCorporateBody) | where possible |URI + labels| 	Related Corporate Body | GND [relatedCorporateBody](https://d-nb.info/standards/elementset/gnd#relatedCorporateBody) |
+| [gnd:relatedPerson](https://d-nb.info/standards/elementset/gnd#relatedPerson) | where possible |URI + labels| | GND [relatedPerson](https://d-nb.info/standards/elementset/gnd#relatedPerson) |
+| [gnd:relatedPlaceOrGeographicName](https://d-nb.info/standards/elementset/gnd#relatedPlaceOrGeographicName) | where possible |URI + labels| | GND [relatedPlaceOrGeographicName](https://d-nb.info/standards/elementset/gnd#relatedPlaceOrGeographicName) |
+| [gnd:relatedSubjectHeading](https://d-nb.info/standards/elementset/gnd#relatedSubjectHeading) | where possible |URI + labels| | GND [relatedSubjectHeading](https://d-nb.info/standards/elementset/gnd#relatedSubjectHeading) |
+| [gnd:relatedTerm](https://d-nb.info/standards/elementset/gnd#relatedTerm) | where possible |URI + labels| | GND [relatedTerm](https://d-nb.info/standards/elementset/gnd#relatedTerm) |
+| [gnd:relatedWork](https://d-nb.info/standards/elementset/gnd#relatedWork) | where possible |URI + labels| | GND [relatedWork](https://d-nb.info/standards/elementset/gnd#relatedWork) |
+| [gnd:titleOfNobility](https://d-nb.info/standards/elementset/gnd#titleOfNobility) | where possible | URI + labels | 	A title of nobility held by a person or family. | GND [titleOfNobility](https://d-nb.info/standards/elementset/gnd#titleOfNobility) |
+| [gnd:titleOfNobilityAsLiteral](https://d-nb.info/standards/elementset/gnd#titleOfNobilityAsLiteral) | where possible | string | 	A title of nobility held by a person or family. | GND [titleOfNobilityAsLiteral](https://d-nb.info/standards/elementset/gnd#titleOfNobilityAsLiteral) |
+| [gnd:udkCode](https://d-nb.info/standards/elementset/gnd#udkCode) | where possible | string | | GND [udkCode](https://d-nb.info/standards/elementset/gnd#udkCode) |
+| [owl:sameAs](http://www.w3.org/2002/07/owl#sameAs) | where possible | URI | URIs in other datasets | swissbib, VIAF, GND, Wikidata and DBpedia |
+| [rdfs:label](http://www.w3.org/2000/01/rdf-schema#label) | everywhere | string | Full heading of the person, including name and - if available - numeration, years of birth/death and title | GND [preferredName](https://d-nb.info/standards/elementset/gnd#preferredName), VIAF [rdfs:label](http://www.w3.org/2000/01/rdf-schema#label) and DBpedia [rdfs:label](http://www.w3.org/2000/01/rdf-schema#label) |
+| [schema:description](http://schema.org/description) | where possible | string (de, en, fr, it) | description|  |
+| [schema:familyName](http://schema.org/familyName) | where possible | string | Last name / Family name | VIAF [schema:familyName](http://schema.org/familyName)) and DBpedia [foaf:lastName](http://xmlns.com/foaf/spec/#term_lastName) |
+| [schema:givenName](http://schema.org/givenName) | where possible | string | First name / Given name | VIAF [schema:givenName](http://schema.org/givenName) and DBpedia [foaf:firstName](http://xmlns.com/foaf/spec/#term_firstName) |
+| [schema:name](http://schema.org/name) | where possible | string (de, en, fr, it) | names|  |
+| [wdt:P102](https://www.wikidata.org/wiki/Property:P102) | where possible | URI + labels | member of political party | Wikidata [wdt:P102](https://www.wikidata.org/wiki/Property:P102) |
+| [wdt:P103](https://www.wikidata.org/wiki/Property:P103) | where possible | URI + labels | native language | Wikidata [wdt:P103](https://www.wikidata.org/wiki/Property:P103) |
+| [wdt:P1038](https://www.wikidata.org/wiki/Property:P1038) | where possible | URI + labels | relative | Wikidata [wdt:P1038](1038) |
+| [wdt:P1050](https://www.wikidata.org/wiki/Property:P1050) | where possible | URI + labels | medical condition | Wikidata [wdt:P1050](https://www.wikidata.org/wiki/Property:P1050) |
+| [wdt:P108](https://www.wikidata.org/wiki/Property:P108) | where possible | URI + labels | employer| Wikidata [wdt:P108](https://www.wikidata.org/wiki/Property:P108) |
+| [wdt:P109](https://www.wikidata.org/wiki/Property:P109) | where possible | URI | link to picture of signature | Wikidata [wdt:P109](https://www.wikidata.org/wiki/Property:P109) |
+| [wdt:P119](https://www.wikidata.org/wiki/Property:P119) | where possible | URI + labels | place of burial | Wikidata [wdt:P119](https://www.wikidata.org/wiki/Property:P119) |
+| [wdt:P1196](https://www.wikidata.org/wiki/Property:P1196) | where possible | URI + labels | manner of death | Wikidata [wdt:P1196](https://www.wikidata.org/wiki/Property:P1196) |
+| [wdt:P1317](https://www.wikidata.org/wiki/Property:P1317) | where possible | date | fluorit| Wikidata [wdt:P1317](https://www.wikidata.org/wiki/Property:P1317) |
+| [wdt:P1343](https://www.wikidata.org/wiki/Property:P1343) | where possible | URI + labels | described by source | Wikidata [wdt:P1343](https://www.wikidata.org/wiki/Property:P1343) |
+| [wdt:P1344](https://www.wikidata.org/wiki/Property:P1344) | where possible | URI + labels | participant of| Wikidata [wdt:P1344](https://www.wikidata.org/wiki/Property:P1344) |
+| [wdt:P140](https://www.wikidata.org/wiki/Property:P140) | where possible | URI + labels | religion | Wikidata [wdt:P140](https://www.wikidata.org/wiki/Property:P140) |
+| [wdt:P1412](https://www.wikidata.org/wiki/Property:P1412) | where possible | URI + labels | language spoken written or signed | Wikidata [wdt:P1412](https://www.wikidata.org/wiki/Property:P1412) |
+| [wdt:P166](https://www.wikidata.org/wiki/Property:P166) | where possible | URI + labels | award recieved| Wikidata [wdt:P166](https://www.wikidata.org/wiki/Property:P166) |
+| [wdt:P172](https://www.wikidata.org/wiki/Property:P172) | where possible | URI + labels | ethnic group | Wikidata [wdt:P172](https://www.wikidata.org/wiki/Property:P172) |
+| [wdt:P21](https://www.wikidata.org/wiki/Property:P21) | where possible | URI + labels | gender or sex | VIAF [schema:gender](http://schema.org/gender), Wikidata [wdt:P21](https://www.wikidata.org/wiki/Property:P21), GND [gender](https://d-nb.info/standards/elementset/gnd#gender) |
+| [wdt:P31](https://www.wikidata.org/wiki/Property:P31) | where possible | URI + labels | instance of | Wikidata [wdt:P31](https://www.wikidata.org/wiki/Property:P31) |
+| [wdt:P373](https://www.wikidata.org/wiki/Property:P373) | where possible | URI | Commons category| Wikidata [wdt:P373](https://www.wikidata.org/wiki/Property:P373) |
+| [wdt:P39](https://www.wikidata.org/wiki/Property:P39) | where possible | URI + labels | position held| Wikidata [wdt:P39](https://www.wikidata.org/wiki/Property:P39) |
+| [wdt:P451](https://www.wikidata.org/wiki/Property:P451) | where possible | URI + labels | partner | Wikidata [wdt:P451](https://www.wikidata.org/wiki/Property:P451) |
+| [wdt:P509](https://www.wikidata.org/wiki/Property:P509) | where possible | URI + labels | cause of death | Wikidata [wdt:P509](https://www.wikidata.org/wiki/Property:P509) |
+| [wdt:P69](https://www.wikidata.org/wiki/Property:P69) | where possible | URI + labels | educated at | Wikidata [wdt:P69](https://www.wikidata.org/wiki/Property:P69) |
+  |
+  |
+\* The use in every resource doesn't exclude some exceptions. It means that every resource should contain this data.  |
