@@ -19,10 +19,15 @@ http://data.swissbib.ch/organisation/[ID]
 | property | use* | datatype | content | source |
 | --- | --- | --- | --- | --- |
 | [dbo:country](http://dbpedia.org/ontology/country) | where possible | URI + labels | Country | Wikidata [wdt:P17](https://www.wikidata.org/wiki/Property:P17), GND [geographicAreaCode](https://d-nb.info/standards/elementset/gnd#geographicAreaCode) |
+| [dbo:isil](http://mappings.dbpedia.org/index.php/OntologyProperty:Isil) | Swiss institutions whose data is available in swissbib | string | ISIL code | swissbib |
 | [dbo:notableWork](http://dbpedia.org/ontology/notableWork) | where possible | URI + labels | Notable Works as URI | Wikidata [wdt:P800](https://www.wikidata.org/wiki/Property:P800), VIAF [dbo:notableWork](http://dbpedia.org/ontology/notableWork), Dbpedia [dbo:notableWork](http://dbpedia.org/ontology/notableWork) |
 | [dbo:thumbnail](http://dbpedia.org/ontology/thumbnail) | where possible | URI |  Image  | Wikidata [wdt:P18](https://www.wikidata.org/wiki/Property:P18), GND [depiction](https://d-nb.info/standards/elementset/gnd#depiction), Dbpedia [dbo:thumbnail](http://dbpedia.org/ontology/thumbnail) |
 | [dbo:website](http://dbpedia.org/ontology/website) | where possible | URI |  official website | GND [homepage](https://d-nb.info/standards/elementset/gnd#homepage), Wikidata[wdt:P856](https://www.wikidata.org/wiki/property:wdt:P856) |
-| [foaf:primaryTopicOf]() | where possible | URI | Wikipedia Links | GND [wikipedia](https://d-nb.info/standards/elementset/gnd#wikipedia) and Dbpedia [foaf:primaryTopicOf]() |
+| [foaf:homepage](http://xmlns.com/foaf/spec/#term_homepage) | Swiss institutions whose data is available in swissbib | URI | website of the library | swissbib |
+| [foaf:mbox](http://xmlns.com/foaf/spec/#term_mbox) | Swiss institutions whose data is available in swissbib | string | e-mail address of the library | swissbib |
+| [foaf:name](http://xmlns.com/foaf/spec/#term_name) | Swiss institutions whose data is available in swissbib | string | Name of the organisation | swissbib |
+| [foaf:phone](http://xmlns.com/foaf/spec/#term_phone) | Swiss institutions whose data is available in swissbib | string | phone number of the library | swissbib |
+| [foaf:primaryTopicOf](http://xmlns.com/foaf/spec/#term_primaryTopic) | where possible | URI | Wikipedia Links | GND [wikipedia](https://d-nb.info/standards/elementset/gnd#wikipedia) and Dbpedia [foaf:primaryTopicOf](http://xmlns.com/foaf/spec/#term_primaryTopic) |
 | [gnd:abbreviatedNameForTheCorporateBody](https://d-nb.info/standards/elementset/gnd#abbreviatedNameForTheCorporateBody) | where possible | string |  | GND [abbreviatedNameForTheCorporateBody](https://d-nb.info/standards/elementset/gnd#abbreviatedNameForTheCorporateBody) |
 | [gnd:benefactor](https://d-nb.info/standards/elementset/gnd#benefactor) | where possible | URI + labels | 	A person, family, or corporate body being the benefactor of a work, a thing, or a corporate body | GND [benefactor](https://d-nb.info/standards/elementset/gnd#benefactor) |
 | [gnd:biographicalOrHistoricalInformation](https://d-nb.info/standards/elementset/gnd#biographicalOrHistoricalInformation) | where possible | string |  | GND [biographicalOrHistoricalInformation](https://d-nb.info/standards/elementset/gnd#biographicalOrHistoricalInformation) |
@@ -74,7 +79,7 @@ http://data.swissbib.ch/organisation/[ID]
 | [gnd:temporaryNameOfTheCorporateBody](https://d-nb.info/standards/elementset/gnd#temporaryNameOfTheCorporateBody) | where possible | string |  | GND [temporaryNameOfTheCorporateBody](https://d-nb.info/standards/elementset/gnd#temporaryNameOfTheCorporateBody) |
 | [gnd:topic](https://d-nb.info/standards/elementset/gnd#topic) | where possible | string |  | GND [topic](https://d-nb.info/standards/elementset/gnd#topic) |
 | [owl:sameAs](http://www.w3.org/2002/07/owl#sameAs) | where possible | URI | URIs in other datasets | swissbib, VIAF, GND, Wikidata and DBpedia |
-| [rdfs:label](http://www.w3.org/2000/01/rdf-schema#label) | everywhere | string | Full heading of the person, including name and - if available - numeration, years of birth/death and title | GND 
+| [rdfs:label](http://www.w3.org/2000/01/rdf-schema#label) | everywhere | string | Full heading of the organisation | GND 
 | [schema:alternateName](http://schema.org/alternateName) | where possible | string | alternate names for the organisation | 
 | [schema:description](http://schema.org/description) | where possible | string (de, en, fr, it) | description|  |
 | [schema:endDate](http://schema.org/endDate) | where possible | string | end time (when this event took place) / event | Wikidata [wdt:P582](https://www.wikidata.org/wiki/Property:P582), VIAF [schema:endDate](http://schema.org/endDate) |
@@ -113,5 +118,9 @@ http://data.swissbib.ch/organisation/[ID]
 | [wdt:P791](https://www.wikidata.org/wiki/Property:P791) | where possible | URI + labels | International Standard Identifier for Libraries (ISIL)  | Wikidata [wdt:P791](https://www.wikidata.org/wiki/Property:wdt:P791) |
 | [wdt:P968](https://www.wikidata.org/wiki/Property:P968) | where possible | URI + labels | email address | Wikidata [wdt:P968](https://www.wikidata.org/wiki/Property:wdt:P968) |
 | [wdt:P973](https://www.wikidata.org/wiki/Property:P973) | where possible | URI + labels | described at URL / event | Wikidata [wdt:P973](https://www.wikidata.org/wiki/Property:wdt:P973) |
+| [vcard:hasRegion](https://www.w3.org/TR/vcard-rdf/#d4e481) | Swiss institutions whose data is available in swissbib | URI | Canton | swissbib |
+| [vcard:locality](https://www.w3.org/TR/vcard-rdf/#d4e999) | Swiss institutions whose data is available in swissbib | string | location of the library | swissbib |
+| [vcard:postal-code](https://www.w3.org/TR/vcard-rdf/#d4e1126) | Swiss institutions whose data is available in swissbib | string | postal code of the library | swissbib |
+| [vcard:street-address](https://www.w3.org/TR/vcard-rdf/#d4e1218) | Swiss institutions whose data is available in swissbib | string | street address of the library | swissbib |
 
 \* The use in every resource doesn't exclude some exceptions. It means that every resource should contain this data.
